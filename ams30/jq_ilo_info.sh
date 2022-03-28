@@ -4,7 +4,7 @@
 #$2 - env name
 #echo $2
 IPMI_USER=Administrator
-IPMI_PASWD="HJ04vak02Mvgd01" #required
+IPMI_PASWD="" #required
 
 while read p1 p2 p3 p4; do
     [[ "$p1" =~ ^#.*$ ]] && continue
@@ -22,11 +22,11 @@ while read p1 p2 p3 p4; do
 
 #PXE_NIC_Name,PXE_MAC,NIC_Firmware_Vs
 #echo ".PhysicalPorts[0].MacAddress,Name,.Firmware.Current.VersionString"
-#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/1 | jq -c '(.StructuredName,.Name,.PhysicalPorts[0].MacAddress,.Firmware.Current.VersionString)'
+#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/2 | jq -c '(.StructuredName,.Name,.PhysicalPorts[0].MacAddress,.Firmware.Current.VersionString)'
 
-#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/1  | jq -r .PhysicalPorts[0].MacAddress
-#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/1  | jq -r .Name
-#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/1  | jq -r .Firmware.Current.VersionString
+#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/2  | jq -r .PhysicalPorts[0].MacAddress
+#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/2  | jq -r .Name
+#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/2  | jq -r .Firmware.Current.VersionString
 
 ###Health Summary###
 #Node On/Off, Node Health, BiosVersion,CPU,Memory
