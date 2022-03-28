@@ -28,6 +28,10 @@ while read p1 p2 p3 p4; do
 #curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/2  | jq -r .Name
 #curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/BaseNetworkAdapters/2  | jq -r .Firmware.Current.VersionString
 
+###StorageDisk Name (only for osds)
+#Disks
+#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/storage/da000000 | jq .StorageControllers[].Model
+
 ###Health Summary###
 #Node On/Off, Node Health, BiosVersion,CPU,Memory
 #echo ".PowerState,.Status.Health,.BiosVersion,.ProcessorSummary.Model,.MemorySummary.TotalSystemMemoryGiB"
