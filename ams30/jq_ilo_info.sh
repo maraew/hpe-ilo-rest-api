@@ -13,10 +13,10 @@ while read p1 p2 p3 p4; do
 
 #iLO Accessible,iLO Address,iLO MAC Address
 #echo ".InterfaceEnabled,.IPv4Addresses.Address,.MACAddress"
-#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/managers/1/ethernetinterfaces/1 | jq -c '(.InterfaceEnabled,.IPv4Addresses.Address,.MACAddress)'
+#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/managers/1/ethernetinterfaces/1 | jq -c '(.InterfaceEnabled,.IPv4Addresses[].Address,.MACAddress)'
 
 #curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/managers/1/ethernetinterfaces/1 | jq -r .InterfaceEnabled
-#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/managers/1/ethernetinterfaces/1 | jq -r .IPv4Addresses.Address
+#curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/managers/1/ethernetinterfaces/1 | jq -r .IPv4Addresses[].Address
 #curl -sLk https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/managers/1/ethernetinterfaces/1 | jq -r .MACAddress
 
 
