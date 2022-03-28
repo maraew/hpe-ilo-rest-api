@@ -3,6 +3,8 @@
 #$1 - check the list
 #$2 - env name
 #echo $2
+IPMI_USER=Administrator
+IPMI_PASWD=""
 while read p1 p2 p3 p4; do
     [[ "$p1" =~ ^#.*$ ]] && continue
     echo $p2'- ilo ip:'$p4
