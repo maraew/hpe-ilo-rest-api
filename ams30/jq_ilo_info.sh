@@ -45,20 +45,20 @@ while read p1 p2 p3 p4; do
 ###Compute Attributes###
 #echo "BootMode,WorkloadProfile,ProcVirtualization,IntelProcVtd,AdvancedMemProtection,EmbNicEnable,ProcX2Apic,EnergyPerfBias,TpmFips,Sriov,SubNumaClustering,NumaGroupSizeOpt,UncoreFreqScaling"
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | \
-#jq -c '.Attributes | \
-#(.BootMode,.WorkloadProfile,.ProcVirtualization,.IntelProcVtd,.AdvancedMemProtection,.EmbNicEnable,.ProcX2Apic,.EnergyPerfBias,.TpmFips,.Sriov,.SubNumaClustering,.NumaGroupSizeOpt,.UncoreFreqScaling)'
+#jq -c '.Attributes | (.BootMode,.WorkloadProfile,.ProcVirtualization,.IntelProcVtd,.AdvancedMemProtection,.EmbNicEnable,.ProcX2Apic,.EnergyPerfBias,.TpmFips,.Sriov,.SubNumaClustering,.NumaGroupSizeOpt,.UncoreFreqScaling)'
 
-#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.EnergyPerfBias
-#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.PowerRegulator
+#echo "BootMode,WorkloadProfile,ProcVirtualization,IntelProcVtd,EnergyPerfBias,PowerRegulator,ProcX2Apic,SubNumaClustering,NumaGroupSizeOpt,UncoreFreqScaling,Sriov"
+#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.BootMode
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.WorkloadProfile
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.ProcVirtualization
-#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.ProcX2Apic
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.IntelProcVtd
+#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.EnergyPerfBias
+#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.PowerRegulator
+#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.ProcX2Apic
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.SubNumaClustering
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.NumaGroupSizeOpt
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.UncoreFreqScaling
 #curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.Sriov
-#curl -sLk --connect-timeout 5 https://${IPMI_USER}:${IPMI_PASWD}@${p4}/redfish/v1/systems/1/bios/settings | jq -r .Attributes.BootMode
 
 
 ###BootOrdering###

@@ -1,4 +1,5 @@
 # hpe-ilo-rest-api
+Based on this API https://hewlettpackard.github.io/ilo-rest-api-docs/ilo5/#actions443
 
 ## This is the scripts for working with ILO5 REST API
 # Script requirements:
